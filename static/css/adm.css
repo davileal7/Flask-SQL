@@ -1,0 +1,40 @@
+@import url('../css/home.css');
+
+body {
+    background: url('../imagens/fundo-adm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.titulo{
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(70, 63, 28);
+    text-align: center;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+div#form_fundo{
+    margin: 2% 50% 5% 5%;
+    opacity: none;
+    position: absolute;
+}
+
+#form_fundo.listaUsuarios {
+    margin: 2% 1% 5% 51%;
+    position: relative;
+    background-color: black;
+}
+.lista h1{
+    background-color: black;
+}
+
+div#form_frente.lista {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    height: 300px;
+    overflow-y: scroll;
+}

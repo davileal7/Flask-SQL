@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+body {
+    background-color: aquamarine;
+    background: url('../imagens/dark-souls-3.jpg');
+}
+
+.flash_alerta {
+    background-color: red;
+    font-size: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div#form_fundo {
+
+    text-align: center;
+    background-color: rgb(70, 63, 28);
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    opacity: 0.8;
+
+    width: 500px;
+    height: 300px;
+}
+
+h1 {
+    color: white;
+}
+
+div#form_frente {
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 2px 5px 5px black;
+    padding: 10px;
+}
+#form_fundo label {
+    display: flex;
+}
+label {
+    font-size: 20px;
+}
+
+input {
+    border-radius: 5px;
+    font-size: 17px;
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+button {
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}

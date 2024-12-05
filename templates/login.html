@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+</head>
+<body>
+
+    {% set msg  = get_flashed_messages()  %}
+    {% if msg %}
+
+        <div class="flash_alerta">
+            {{ msg[0] }}
+        </div>
+
+    {% endif %}
+
+    <div id="form_fundo">
+        <h1>Login</h1>
+        <h1>Flask - Sql</h1>
+        <div id="form_frente">
+            <form action="/login" id="login" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br>
+                <label for="senha" id="senha">Senha</label>
+                <input type="password" name="senha" id="senha" required placeholder="Digite sua senha"><br>
+                <label for="id" id="id">Identificador</label>
+                <input type="text" name="id" id="id" required placeholder="Digite seu ID"><br>
+                <button type='submit' id="btn_login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

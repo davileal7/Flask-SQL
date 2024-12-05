@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuário</title>
+    <link rel="stylesheet" href="../static/css/usuarios.css">
+</head>
+<body>
+
+    <div id="form_fundo">
+        <h1>Download de Arquivo</h1>
+        <div id="form_frente">
+            {% if Pasta_Arquivos %}
+            <form action="/download" method="post">
+                <select name="arquivos_Download" id="arquivos_Download">
+                    {% for documento in Pasta_Arquivos %}
+                        <option value="{{documento}}">{{documento}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Download</button>
+            </form>
+
+            {% else %}
+                <h1>Sem Arquivo para Downloads</h1>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+</body>
+</html>

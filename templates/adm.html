@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ADM</title>
+    <link rel="stylesheet" href="../static/css/adm.css">
+</head>
+<body>
+
+    {% set msg  = get_flashed_messages()  %}
+    {% if msg %}
+
+        <div class="flash_alerta">
+            {{ msg[0] }}
+        </div>
+
+    {% endif %}
+
+    <div id="form_fundo">
+        <h1>Cadastrar Usuário</h1>
+        <div id="form_frente">
+            <form action="/cadastrarUsuario" id="login" method="post">
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br>
+                <label for="senha" id="senha">Senha</label>
+                <input type="text" name="senha" id="senha" required placeholder="Digite sua senha"><br>
+                <label for="id" id="id">Identificador</label>
+                <input type="text" name="id" id="id" required placeholder="Digite seu ID"><br>
+                <button type='submit' id="btn_login">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Cadastrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="form_fundo" class="listaUsuarios">
+        <h1>Usuários Cadastrados</h1>
+        <div id="form_frente">
+            {% if usuarios %}
+                {% for usuario in usuarios %}
+                <form action="/excluirUsuario" method="post">
+                    <ul>
+                        <input type="hidden" name="usuarioExcluir" value="{{usuario}}">
+                        <li>{{ usuario }}</li>
+                    </ul>
+                    <button type="submit">Excluir</button>
+                </form>
+                {% endfor %}
+            {% else %}
+            <h1>Não existe usuários cadastrados</h1>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    <div id="form_fundo" class="upload">
+        <h1>Enviar Arquivos</h1>
+        <div id="form_frente" class="upload">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="documento" id="documento"> <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
